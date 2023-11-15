@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MovieController {
-
+	
 	@RequestMapping("movie")
-	public void movie(MovieVO vo, Model model) {
-		System.out.println(vo);
-		model.addAttribute("vo", vo);
+	public void movie(String title, String price, Model model) {
+		System.out.println(title + " " + price);
+		model.addAttribute("title", title);
+		model.addAttribute("price", price);
 	}
 }
