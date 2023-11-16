@@ -10,24 +10,26 @@
 	$(function() { 
 		$('#b1').click(function() {
 			$.ajax({
-				url: "movie",
-				data: {
-					title : $('#title').val(),
-					price : $('#price').val()
-				},
-				success: function(x) {
-					alert(x)
-					$("#result").html(x)
-				} //success
-			}) //ajax
-		}) //b1
-	}) //$
+				url: "json.jsp",
+				success: function(response) {
+					$('#result').html(response)
+				}//success
+			})	
+		})//b1
+		$('#b2').click(function() {
+			$.ajax({
+				url: "json2.jsp",
+				success: function(response) {
+					$('#result').html(response)
+				}//success
+			})	
+		})
+	})//$
 </script>
 </head>
 <body>
-영화 제목: <input id="title" value="수퍼맨"><br>
-영화관람료: <input id="price" value="20000"><br>
-	<button id="b1">영화예매 항목 확인</button>
+	<button id="b1">JSON으로 받아와보자.!</button>
+	<button id="b2">JSON2으로 받아와보자.!</button>
 	<hr color="red">
 	<div id="result">ajax통신 결과들어가는 곳.</div>
 </body>
