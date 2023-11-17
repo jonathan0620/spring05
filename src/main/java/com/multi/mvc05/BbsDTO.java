@@ -45,5 +45,5 @@ public class BbsDTO {
 
 	// getter/setter
 	// toString
-
+	//ctrl + shift + f : 코드 자동 정리
 }

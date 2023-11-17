@@ -11,18 +11,20 @@
 		$('#b1').click(function() {
 			$.ajax({
 				url: "json.jsp",
-				success: function(response) {
-					$('#result').html(response)
+				dataType: "json",
+				success: function(json) {
+					$('#result').html(json.tel)
 				}//success
 			})	
 		})//b1
 		$('#b2').click(function() {
 			$.ajax({
 				url: "json2.jsp",
-				success: function(response) {
-					$('#result').html(response)
+				dataType: "json",
+				success: function(array) {
+					$('#result').html(array[0].tel)
 				}//success
-			})	
+			})//ajax	
 		})
 	})//$
 </script>
